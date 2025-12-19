@@ -1,0 +1,38 @@
+project_name: "sft_vs_rl"
+
+seed: 42
+
+dataset:
+  name: "openai/gsm8k"
+  config: "main"
+  # num_samples:  # You can pass a number here to limit the number of samples to use.
+  seed: 42
+
+model:
+  name: "Qwen/Qwen2.5-0.5B"
+  max_length: 256
+
+training:
+  output_dir: "./results"
+  num_train_epochs: 3
+  per_device_train_batch_size: 1
+  gradient_accumulation_steps: 8
+  save_steps: 1000
+  logging_steps: 1
+  learning_rate: 1.0e-6
+  weight_decay: 0.05
+  warmup_ratio: 0.1
+  lr_scheduler_type: "cosine"
+  resume_from_checkpoint: null  # Set to a path or True to resume from the latest checkpoint
+  fp16: false
+  bf16: true
+  report_to: "wandb"
+
+  # Evaluations
+  eval_strategy: "steps"
+  do_eval: false
+  prediction_loss_only: false
+  eval_steps: 100
+
+model_config:
+  use_flash_attention: true

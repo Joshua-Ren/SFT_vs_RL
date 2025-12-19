@@ -1,0 +1,4 @@
+  0%|                                                                                                                                                       | 0/2523 [00:00<?, ?it/s]/home/joshua52/projects/def-dsuth/joshua52/env_KD/lib/python3.11/site-packages/torch/utils/data/dataloader.py:665: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+/home/joshua52/projects/def-dsuth/joshua52/env_KD/lib/python3.11/site-packages/transformers/trainer.py:3700: FutureWarning: `torch.cpu.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cpu', args...)` instead.
+  ctx_manager = torch.cpu.amp.autocast(cache_enabled=cache_enabled, dtype=self.amp_dtype)

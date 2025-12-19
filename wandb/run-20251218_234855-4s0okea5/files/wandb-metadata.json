@@ -1,0 +1,25 @@
+{
+  "os": "Linux-5.14.0-570.22.1.el9_6.x86_64-x86_64-AMD_EPYC_9135_16-Core_Processor-with-glibc2.37",
+  "python": "CPython 3.11.5",
+  "startedAt": "2025-12-19T07:48:55.678998Z",
+  "program": "/home/joshua52/projects/def-dsuth/joshua52/SFT_vs_RL/train_sft.py",
+  "email": "renyi.joshua@gmail.com",
+  "root": "/project/6061681/joshua52/SFT_vs_RL",
+  "host": "login1",
+  "executable": "/home/joshua52/projects/def-dsuth/joshua52/env_KD/bin/python",
+  "cpu_count": 32,
+  "cpu_count_logical": 32,
+  "disk": {
+    "/": {
+      "total": "202559471616",
+      "used": "2557448192"
+    }
+  },
+  "memory": {
+    "total": "405316845568"
+  },
+  "slurm": {
+    "mpi_type": "pmix"
+  },
+  "writerId": "j226n1mivjefcwkbs9g8tpyr2j6lveqo"
+}

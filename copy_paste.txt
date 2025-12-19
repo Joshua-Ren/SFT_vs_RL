@@ -1,0 +1,31 @@
+
+virtualenv --no-download env_trl
+
+module load python StdEnv cuda arrow opencv
+source /scratch/joshua52/env_trl/bin/activate
+
+salloc --time=2:0:0 --account=rrg-dsuth --gres=gpu:h100:1 --mem=32000M
+watch -n 1 sacct --format=jobid,jobname,partition,account,state,cputime,timelimit,exitcode -X
+
+cd /scratch/joshua52/SFT_vs_RL
+
+python -m pdb train_sft.py
+
+
+diskusage_report
+
+export HF_HOME="/scratch/joshua52/huggingface/"
+
+python3 examples/data_preprocess/gsm8k.py --local_save_dir /home/joshua52/scratch/data/gsm8k
+
+accelerate launch distil_logits.py
+python -m pdb distil_logits.py
+python distil_logits.py
+
+export TRANSFORMERS_CACHE=$SCRATCH/hf_cache
+export HF_HOME=$SCRATCH/hf_cache
+export HUGGINGFACE_HUB_CACHE=$SCRATCH/hf_cache
+
+source /home/joshua52/projects/def-dsuth/joshua52/env_KD/bin/activate
+accelerate config default
+#python -m pip install .
