@@ -4,7 +4,8 @@ import re
 
 def extract_solution(solution_str):
     solution = re.search("#### (\\-?[0-9\\.\\,]+)", solution_str)
-    assert solution is not None
+    if solution is None:
+        return 'N/A'
     final_solution = solution.group(0)
     final_solution = final_solution.split("#### ")[1].replace(",", "")
     return final_solution

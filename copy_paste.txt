@@ -1,16 +1,28 @@
 
 virtualenv --no-download env_trl
+watch -n 1 sacct --format=jobid,jobname,partition,account,state,cputime,timelimit,exitcode -X
+
+export HF_TOKEN="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"
+
+salloc --time=2:0:0 --account=rrg-dsuth --gres=gpu:h100:1 --mem=32000M
 
 module load python StdEnv cuda arrow opencv
 source /scratch/joshua52/env_trl/bin/activate
+cd /home/joshua52/projects/def-dsuth/joshua52/SFT_vs_RL
 
-salloc --time=2:0:0 --account=rrg-dsuth --gres=gpu:h100:1 --mem=32000M
-watch -n 1 sacct --format=jobid,jobname,partition,account,state,cputime,timelimit,exitcode -X
-
-cd /scratch/joshua52/SFT_vs_RL
+srun --pty bash
+source /scratch/joshua52/env_trl/bin/activate
+PORT=8888
+jupyter notebook --no-browser --ip=127.0.0.1 --port=$PORT
 
 python -m pdb train_sft.py
 
+# ---------- 2025-12-22
+python analyze_logits.py
+
+
+
+mv /home/joshua52/projects/def-dsuth/joshua52/SFT_vs_RL/*.pt /scratch/joshua52/sft_rl_temp/
 
 diskusage_report
 
@@ -29,3 +41,4 @@ export HUGGINGFACE_HUB_CACHE=$SCRATCH/hf_cache
 source /home/joshua52/projects/def-dsuth/joshua52/env_KD/bin/activate
 accelerate config default
 #python -m pip install .
+

@@ -9,7 +9,7 @@ dataset:
   seed: 42
 
 model:
-  name: "Qwen/Qwen2.5-0.5B"
+  name: "microsoft/Phi-3-mini-4k-instruct" #"mistralai/Mistral-7B-v0.1" # "deepseek-ai/deepseek-llm-7b-chat" #"Qwen/Qwen2.5-0.5B" #"Qwen/Qwen2.5-Math-1.5B" # Qwen/Qwen2.5-7B-Instruct # "Qwen/Qwen2.5-Math-7B-Instruct" # 
   max_length: 256
 
 training:
