@@ -2,7 +2,7 @@
 virtualenv --no-download env_trl
 watch -n 1 sacct --format=jobid,jobname,partition,account,state,cputime,timelimit,exitcode -X
 
-export HF_TOKEN="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"
+
 
 salloc --time=2:0:0 --account=rrg-dsuth --gres=gpu:h100:1 --mem=32000M
 
