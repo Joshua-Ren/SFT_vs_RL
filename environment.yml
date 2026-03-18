@@ -1,0 +1,32 @@
+name: llm
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - scikit-learn
+  - tqdm
+  - ipykernel
+  - jupyter
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=11.8
+  - pip:
+      - transformers
+      - datasets
+      - accelerate
+      - peft
+      - trl
+      - sentencepiece
+      - huggingface_hub
+      - wandb
+      - einops
+      - jsonlines
+      - pyyaml

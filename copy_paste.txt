@@ -1,3 +1,15 @@
+# ====== OATML Scripts
+source /scratch-ssd/oatml/miniconda3/bin/activate llm
+
+
+
+
+
+
+
+
+
+
 
 virtualenv --no-download env_trl
 watch -n 1 sacct --format=jobid,jobname,partition,account,state,cputime,timelimit,exitcode -X
