@@ -1,15 +1,25 @@
 # ====== OATML Scripts
 source /scratch-ssd/oatml/miniconda3/bin/activate llm
 
+/users/josren/SFT_vs_RL/
+/scratch-ssd/josren/SFT_VS_RL/results/
+
+srun --gres=gpu:a100:1 -c 4 --pty bash
+
+
+rsync -av --ignore-existing josren@oat18.cs.ox.ac.uk:/scratch-ssd/josren/SFT_VS_RL/results /scratch-ssd/josren/SFT_VS_RL/
+
+
+rsync -av --ignore-existing josren@oat18.cs.ox.ac.uk:/scratch-ssd/josren/SFT_VS_RL/results/Phi-3-mini-4k-instruct /scratch-ssd/josren/SFT_VS_RL/results
+
+"/cygdrive/e/download_results/PO1_SFT_VS_RL/"
+
+# --- No password on server
+type $env:USERPROFILE\.ssh\id_rsa.pub | ssh josren@oat18.cs.ox.ac.uk "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
 
 
 
-
-
-
-
-
-
+python train_sft.py
 
 virtualenv --no-download env_trl
 watch -n 1 sacct --format=jobid,jobname,partition,account,state,cputime,timelimit,exitcode -X

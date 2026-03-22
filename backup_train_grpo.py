@@ -24,7 +24,7 @@ for i in range(2):
         EXP_NAME = f"rl_tmp{TEMP}"
 
     MODEL = config['model']['name'].split('/')[1]
-    SCRATCH_PATH = f'/scratch/joshua52/sft_rl_temp/{MODEL}/'
+    SCRATCH_PATH = f'/scratch-ssd/josren/SFT_VS_RL/results/{MODEL}/'
 
     # def tokenize_function(examples):
     #     return tokenizer(examples["text"], truncation=True, max_length=config["tokenizer"]["max_length"], padding="max_length")

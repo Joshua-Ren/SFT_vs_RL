@@ -1,0 +1,4 @@
+
+EnvironmentFileNotFound: '/auto/users/josren/SFT_vs_RL/environment.' file not found
+
+/scratch-ssd/josren/conda_envs/llm/etc/conda/activate.d/libblas_mkl_activate.sh: line 1: MKL_INTERFACE_LAYER: unbound variable

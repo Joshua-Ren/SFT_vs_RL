@@ -1,0 +1,5 @@
+Waiting for lock /tmp/run_locked_josren at Fri 20 Mar 12:38:21 GMT 2026
+(will force acquire the lock in 3 minutes)
+Lock acquired at Fri 20 Mar 12:38:21 GMT 2026
+Retrieving notices: ...working... done
+Lock released at Fri 20 Mar 12:38:21 GMT 2026
