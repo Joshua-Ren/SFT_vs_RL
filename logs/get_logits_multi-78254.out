@@ -1,0 +1,49 @@
+Waiting for lock /tmp/run_locked_josren at Mon 30 Mar 15:38:22 BST 2026
+(will force acquire the lock in 3 minutes)
+Lock acquired at Mon 30 Mar 15:38:22 BST 2026
+Retrieving notices: ...working... done
+Channels:
+ - conda-forge
+ - nvidia
+ - defaults
+ - pytorch
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+Installing pip dependencies: ...working... Ran pip subprocess with arguments:
+['/scratch-ssd/josren/conda_envs/llm/bin/python', '-m', 'pip', 'install', '-U', '-r', '/auto/users/josren/SFT_vs_RL/condaenv.tegjfhpd.requirements.txt', '--exists-action=b']
+Pip subprocess output:
+Looking in indexes: https://download.pytorch.org/whl/cu118, https://pypi.org/simple
+Requirement already satisfied: torch==2.6.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from -r /auto/users/josren/SFT_vs_RL/condaenv.tegjfhpd.requirements.txt (line 2)) (2.6.0+cu118)
+Requirement already satisfied: torchvision==0.21.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from -r /auto/users/josren/SFT_vs_RL/condaenv.tegjfhpd.requirements.txt (line 3)) (0.21.0+cu118)
+Requirement already satisfied: torchaudio==2.6.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from -r /auto/users/josren/SFT_vs_RL/condaenv.tegjfhpd.requirements.txt (line 4)) (2.6.0+cu118)
+Requirement already satisfied: transformers in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from -r /auto/users/josren/SFT_vs_RL/condaenv.tegjfhpd.requirements.txt (line 6)) (5.3.0)
+Collecting transformers (from -r /auto/users/josren/SFT_vs_RL/condaenv.tegjfhpd.requirements.txt (line 6))
+
+failed
+Lock released at Mon 30 Mar 15:39:13 BST 2026
+==========================
+Running model: Qwen/Qwen3.5-0.8B
+==========================
+Saved to: /scratch-ssd/josren/SFT_vs_RL/results/sft_single_token_mmlu_extra/Qwen3.5-0.8B/sft
+Creating remote dir...
+Syncing large files to /scratch-ssd/josren/SFT_vs_RL/results/sft_single_token_mmlu_extra/Qwen3.5-0.8B
+Syncing metadata to /users/josren/SFT_vs_RL/results/sft_single_token_mmlu_extra/Qwen3.5-0.8B
+sending incremental file list
+./
+sft/
+
+sent 97 bytes  received 23 bytes  80.00 bytes/sec
+total size is 0  speedup is 0.00
+sending incremental file list
+./
+sft/
+sft/config.json
+sft/resolved_config.yaml
+sft/updates_by_domain.csv
+sft/updates_by_domain.parquet
+sft/updates_summary.csv
+sft/updates_summary.parquet
+
+sent 5,316,231 bytes  received 141 bytes  10,632,744.00 bytes/sec
+total size is 5,314,411  speedup is 1.00

@@ -2,7 +2,7 @@
 source /scratch-ssd/oatml/miniconda3/bin/activate llm
 
 /users/josren/SFT_vs_RL/
-/scratch-ssd/josren/SFT_VS_RL/results/
+/scratch-ssd/josren/SFT_vs_RL/results/
 
 srun --gres=gpu:a100:1 -c 4 --pty bash
 
@@ -12,55 +12,19 @@ rsync -av --ignore-existing josren@oat18.cs.ox.ac.uk:/scratch-ssd/josren/SFT_VS_
 
 rsync -av --ignore-existing josren@oat18.cs.ox.ac.uk:/scratch-ssd/josren/SFT_VS_RL/results/Phi-3-mini-4k-instruct /scratch-ssd/josren/SFT_VS_RL/results
 
+scp -r josren@oat0.cs.ox.ac.uk:/users/josren/SFT_vs_RL/figures /cygdrive/e/PO1_token_wise
+
+
 "/cygdrive/e/download_results/PO1_SFT_VS_RL/"
 
 # --- No password on server
 type $env:USERPROFILE\.ssh\id_rsa.pub | ssh josren@oat18.cs.ox.ac.uk "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
 
+python -m pdb get_logits_sft.py --do_extract_logits --model_name "meta-llama/Llama-3.2-3B" --output_dir out
 
-
-python train_sft.py
-
-virtualenv --no-download env_trl
-watch -n 1 sacct --format=jobid,jobname,partition,account,state,cputime,timelimit,exitcode -X
-
-
-
-salloc --time=2:0:0 --account=rrg-dsuth --gres=gpu:h100:1 --mem=32000M
-
-module load python StdEnv cuda arrow opencv
-source /scratch/joshua52/env_trl/bin/activate
-cd /home/joshua52/projects/def-dsuth/joshua52/SFT_vs_RL
-
-srun --pty bash
-source /scratch/joshua52/env_trl/bin/activate
-PORT=8888
-jupyter notebook --no-browser --ip=127.0.0.1 --port=$PORT
-
-python -m pdb train_sft.py
-
-# ---------- 2025-12-22
-python analyze_logits.py
-
-
-
-mv /home/joshua52/projects/def-dsuth/joshua52/SFT_vs_RL/*.pt /scratch/joshua52/sft_rl_temp/
-
-diskusage_report
-
-export HF_HOME="/scratch/joshua52/huggingface/"
-
-python3 examples/data_preprocess/gsm8k.py --local_save_dir /home/joshua52/scratch/data/gsm8k
-
-accelerate launch distil_logits.py
-python -m pdb distil_logits.py
-python distil_logits.py
-
-export TRANSFORMERS_CACHE=$SCRATCH/hf_cache
-export HF_HOME=$SCRATCH/hf_cache
-export HUGGINGFACE_HUB_CACHE=$SCRATCH/hf_cache
-
-source /home/joshua52/projects/def-dsuth/joshua52/env_KD/bin/activate
-accelerate config default
-#python -m pip install .
-
+python -u get_one_step_scores.py \
+    --config ./configs/train_basic.yaml \
+    --model_name "Qwen/Qwen3.5-0.8B" \
+    --output_dir "./results/tmp" \
+    --extract_n_samples 1 \
+    --prob_n_samples 1

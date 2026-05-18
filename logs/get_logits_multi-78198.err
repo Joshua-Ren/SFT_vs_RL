@@ -1,0 +1,11 @@
+slurmstepd-oat16: error: Unable to create TMPDIR [/scratch-ssd/josren/tmp]: No such file or directory
+slurmstepd-oat16: error: Setting TMPDIR to /tmp
+Traceback (most recent call last):
+  File "/auto/users/josren/SFT_vs_RL/get_one_step_scores.py", line 513, in <module>
+    main()
+  File "/auto/users/josren/SFT_vs_RL/get_one_step_scores.py", line 427, in main
+    config = apply_overrides(config, args)
+  File "/auto/users/josren/SFT_vs_RL/get_one_step_scores.py", line 406, in apply_overrides
+    config["train"]["learning_rate"] = args.lr
+KeyError: 'train'
+srun: error: oat16: task 0: Exited with exit code 1

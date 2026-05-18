@@ -15,7 +15,7 @@ export CONDA_ENVS_PATH=/scratch-ssd/$USER/conda_envs
 export CONDA_PKGS_DIRS=/scratch-ssd/$USER/conda_pkgs
 export XDG_CACHE_HOME=/scratch-ssd/$USER/.cache
 export TMPDIR=/scratch-ssd/$USER/tmp
-
+export HF_TOKEN="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"
 set +u
 /scratch-ssd/oatml/run_locked.sh \
   /scratch-ssd/oatml/miniconda3/bin/conda-env update -f environment.yml
@@ -27,8 +27,6 @@ set -u
 #RUN_ID=$(date +%Y%m%d_%H%M%S)
 RUN_ID="basic_logits_analysis01"
 
-MODE=${MODE:-both}
-TEMP=${TEMP:-1.0}
 N_SAMPLES=${N_SAMPLES:-50}
 MAX_NEW_TOKENS=${MAX_NEW_TOKENS:-200}
 
@@ -36,14 +34,16 @@ MAX_NEW_TOKENS=${MAX_NEW_TOKENS:-200}
 # model list
 # ========================
 MODELS=(
-  "Qwen/Qwen3.5-0.8B"
-  "Qwen/Qwen2.5-1.5B"
+   "Qwen/Qwen3.5-0.8B"
+  # "Qwen/Qwen2.5-1.5B"
+  # "meta-llama/Llama-3.2-3B"
+  # "meta-llama/Llama-3.2-3B-Instruct"
+  # "Qwen/Qwen2.5-3B-Instruct"
   # "Qwen/Qwen2.5-Math-7B-Instruct"
   # "Qwen/Qwen2.5-7B-Instruct"
   # "deepseek-ai/deepseek-llm-7b-chat"
   # "mistralai/Mistral-7B-v0.1"
   # "microsoft/Phi-3-mini-4k-instruct"
-  # "meta-llama/Llama-3.2-3B"
 )
 
 # ========================
@@ -56,8 +56,8 @@ for MODEL_NAME in "${MODELS[@]}"; do
   echo "Running model: $MODEL_NAME"
   echo "=========================="
 
-  LOCAL_ROOT="/scratch-ssd/$USER/SFT_VS_RL/$MODEL_TAG/$RUN_ID"
-  HOME_ROOT="$HOME/SFT_VS_RL/$MODEL_TAG/$RUN_ID"
+  LOCAL_ROOT="/scratch-ssd/$USER/SFT_vs_RL/results/$RUN_ID/$MODEL_TAG"
+  HOME_ROOT="$HOME/SFT_vs_RL/results/$RUN_ID"/$MODEL_TAG
 
   mkdir -p "$LOCAL_ROOT"
   mkdir -p "$HOME_ROOT"
@@ -69,19 +69,40 @@ for MODEL_NAME in "${MODELS[@]}"; do
     --do_extract_logits \
     --extract_n_samples "$N_SAMPLES"
 
-  # # -------- RL logits --------
-  # srun python -u get_rl_logits.py \
-  #   --config ./configs/train_basic.yaml \
-  #   --model_name "$MODEL_NAME" \
-  #   --output_dir "$LOCAL_ROOT/rl" \
-  #   --mode "$MODE" \
-  #   --temperature "$TEMP" \
-  #   --max_new_tokens "$MAX_NEW_TOKENS" \
-  #   --n_samples "$N_SAMPLES"
+  # -------- RL logits -greedy --------
+  srun python -u get_logits_grpo.py \
+    --config ./configs/train_basic.yaml \
+    --model_name "$MODEL_NAME" \
+    --output_dir "$LOCAL_ROOT/rl" \
+    --mode "greedy" \
+    --temperature 1.0 \
+    --max_new_tokens "$MAX_NEW_TOKENS" \
+    --n_samples "$N_SAMPLES"
 
+  # -------- RL logits - tau=1.0 --------
+  srun python -u get_logits_grpo.py \
+    --config ./configs/train_basic.yaml \
+    --model_name "$MODEL_NAME" \
+    --output_dir "$LOCAL_ROOT/rl" \
+    --mode "sample" \
+    --temperature 1.0 \
+    --top_p 0.9 \
+    --max_new_tokens "$MAX_NEW_TOKENS" \
+    --n_samples "$N_SAMPLES"
+
+  # -------- RL logits - tau=0.7 --------
+  srun python -u get_logits_grpo.py \
+    --config ./configs/train_basic.yaml \
+    --model_name "$MODEL_NAME" \
+    --output_dir "$LOCAL_ROOT/rl" \
+    --mode "sample" \
+    --temperature 0.7 \
+    --top_p 0.9 \
+    --max_new_tokens "$MAX_NEW_TOKENS" \
+    --n_samples "$N_SAMPLES"
 
   REMOTE_HOST="josren@oat0.cs.ox.ac.uk"
-  REMOTE_BASE="/scratch-ssd/$USER/SFT_VS_RL/$MODEL_TAG/$RUN_ID"
+  REMOTE_BASE="/scratch-ssd/$USER/SFT_vs_RL/results/$RUN_ID/$MODEL_TAG"
   echo "Creating remote dir..."
   ssh "$REMOTE_HOST" "mkdir -p $REMOTE_BASE"
 

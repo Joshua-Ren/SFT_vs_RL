@@ -1,0 +1,23 @@
+project_name: sft_vs_rl
+seed: 42
+dataset:
+  name: openai/gsm8k
+  config: main
+  seed: 42
+model:
+  name: meta-llama/Llama-3.2-3B-Instruct
+  max_length: 256
+training:
+  learning_rate: 2.0e-05
+  num_train_epochs: 3
+  per_device_train_batch_size: 4
+  logging_steps: 10
+  save_steps: 200
+  save_total_limit: 2
+  bf16: true
+  fp16: false
+  report_to: none
+  eval_strategy: steps
+  do_eval: false
+  prediction_loss_only: false
+  eval_steps: 100

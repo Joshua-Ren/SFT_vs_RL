@@ -1,0 +1,14 @@
+config: ./configs/train_basic.yaml
+output_dir: /scratch-ssd/josren/SFT_vs_RL/results/basic_logits_analysis01/Qwen2.5-7B-Instruct/rl
+lr: null
+epochs: null
+batch_size: null
+save_steps: null
+logging_steps: null
+temperature: 0.7
+top_p: 0.9
+max_new_tokens: 200
+n_samples: 50
+model_name: Qwen/Qwen2.5-7B-Instruct
+mode: sample
+seed: 42

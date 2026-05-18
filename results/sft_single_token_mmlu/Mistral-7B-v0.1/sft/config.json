@@ -1,0 +1,12 @@
+{
+  "model_name_or_path": "mistralai/Mistral-7B-v0.1",
+  "lr": 0.0001,
+  "probe_subjects": [
+    "abstract_algebra",
+    "college_mathematics"
+  ],
+  "n_probe_per_subject": 50,
+  "tau": 0.1,
+  "algo": "sft",
+  "max_samples": 25
+}

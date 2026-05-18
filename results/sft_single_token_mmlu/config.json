@@ -1,0 +1,13 @@
+{
+  "model_name_or_path": "Qwen/Qwen3.5-0.8B",
+  "lr": 0.0001,
+  "weight_decay": 0.0,
+  "probe_subjects": [
+    "abstract_algebra",
+    "college_mathematics"
+  ],
+  "n_probe_per_subject": 100,
+  "tau": 0.1,
+  "algo": "sft",
+  "max_samples": 10
+}

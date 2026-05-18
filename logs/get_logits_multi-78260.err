@@ -1,0 +1,53 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/320 [00:00<?, ?it/s]Loading weights: 100%|██████████| 320/320 [00:00<00:00, 7300.71it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]
+  0%|          | 0/61 [00:00<?, ?it/s][A
+  2%|▏         | 1/61 [00:01<01:28,  1.47s/it][A
+  3%|▎         | 2/61 [00:02<01:22,  1.41s/it][A
+  5%|▍         | 3/61 [00:04<01:20,  1.38s/it][A
+  7%|▋         | 4/61 [00:05<01:17,  1.37s/it][A
+  8%|▊         | 5/61 [00:06<01:16,  1.36s/it][A
+ 10%|▉         | 6/61 [00:08<01:14,  1.36s/it][A
+ 11%|█▏        | 7/61 [00:09<01:13,  1.35s/it][A
+ 13%|█▎        | 8/61 [00:10<01:11,  1.35s/it][A
+ 15%|█▍        | 9/61 [00:12<01:10,  1.35s/it][A
+ 16%|█▋        | 10/61 [00:13<01:08,  1.35s/it][A
+ 18%|█▊        | 11/61 [00:15<01:11,  1.43s/it][A
+ 20%|█▉        | 12/61 [00:16<01:08,  1.40s/it][A
+ 21%|██▏       | 13/61 [00:17<01:06,  1.39s/it][A
+ 23%|██▎       | 14/61 [00:19<01:04,  1.37s/it][A
+ 25%|██▍       | 15/61 [00:20<01:02,  1.37s/it][A
+ 26%|██▌       | 16/61 [00:21<01:01,  1.36s/it][A
+ 28%|██▊       | 17/61 [00:23<00:59,  1.35s/it][A
+ 30%|██▉       | 18/61 [00:24<00:58,  1.35s/it][A
+ 31%|███       | 19/61 [00:25<00:56,  1.35s/it][A
+ 33%|███▎      | 20/61 [00:27<00:55,  1.35s/it][A
+ 34%|███▍      | 21/61 [00:28<00:53,  1.35s/it][A
+ 36%|███▌      | 22/61 [00:30<00:52,  1.34s/it][A
+ 38%|███▊      | 23/61 [00:31<00:50,  1.33s/it][A
+ 39%|███▉      | 24/61 [00:32<00:49,  1.33s/it][A
+ 41%|████      | 25/61 [00:33<00:48,  1.34s/it][A
+ 43%|████▎     | 26/61 [00:35<00:46,  1.34s/it][A
+ 44%|████▍     | 27/61 [00:36<00:45,  1.34s/it][A
+ 46%|████▌     | 28/61 [00:38<00:44,  1.34s/it][A 46%|████▌     | 28/61 [00:38<00:45,  1.37s/it]
+  0%|          | 0/1 [00:38<?, ?it/s]
+Traceback (most recent call last):
+  File "/auto/users/josren/SFT_vs_RL/get_one_step_scores.py", line 512, in <module>
+    main()
+  File "/auto/users/josren/SFT_vs_RL/get_one_step_scores.py", line 481, in main
+    run_single_token_intervention(
+  File "/auto/users/josren/SFT_vs_RL/get_one_step_scores.py", line 336, in run_single_token_intervention
+    sop, aop_l2, aop_kl, entropy = compute_off_policy_scores(model, sample, pos, gamma=0.5)
+  File "/scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/auto/users/josren/SFT_vs_RL/utils/tracking_metrics.py", line 64, in compute_off_policy_scores
+    aop_kl = (-pred_logp[y]).item()
+  File "/auto/users/josren/SFT_vs_RL/utils/tracking_metrics.py", line 64, in compute_off_policy_scores
+    aop_kl = (-pred_logp[y]).item()
+  File "/scratch-ssd/josren/conda_envs/llm/lib/python3.10/bdb.py", line 90, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/scratch-ssd/josren/conda_envs/llm/lib/python3.10/bdb.py", line 115, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+srun: error: oat18: task 0: Exited with exit code 1
