@@ -9,7 +9,7 @@ from utils.utils import extract_solution
 
 
 class GSM8KTokenizerProcessor:
-    def __init__(self, model_name_or_path: str, max_length: int = 512):
+    def __init__(self, model_name_or_path: str, max_length: int = 512, local_files_only: bool = False):
         """
         Args:
             model_name_or_path:
@@ -23,6 +23,7 @@ class GSM8KTokenizerProcessor:
             padding_side="right",
             truncation_side="right",
             trust_remote_code=True,
+            local_files_only=local_files_only,
             # use_fast=False
         )
         if self.tokenizer.pad_token is None:
