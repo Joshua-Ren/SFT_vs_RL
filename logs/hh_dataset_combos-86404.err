@@ -1,0 +1,14 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Traceback (most recent call last):
+  File "/auto/users/josren/SFT_vs_RL/run_hh_analysis.py", line 626, in <module>
+    main()
+  File "/auto/users/josren/SFT_vs_RL/run_hh_analysis.py", line 499, in main
+    processed_dataset, processor, selected_raw_examples = load_mixed_dataset_and_tokenizer(
+  File "/auto/users/josren/SFT_vs_RL/run_hh_analysis.py", line 391, in load_mixed_dataset_and_tokenizer
+    _process_selected_raw_rows(right_adapter, right_raw_rows),
+  File "/auto/users/josren/SFT_vs_RL/run_hh_analysis.py", line 313, in _process_selected_raw_rows
+    sample = adapter.process_raw_example(raw_row)
+  File "/auto/users/josren/SFT_vs_RL/utils/hh_dataset_adapters.py", line 320, in process_raw_example
+    prompt_text=prompt_text,
+UnboundLocalError: local variable 'prompt_text' referenced before assignment
+srun: error: oat11: task 0: Exited with exit code 1

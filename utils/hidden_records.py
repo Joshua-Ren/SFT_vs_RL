@@ -148,11 +148,17 @@ def extract_token_hidden_records(model, batch, tokenizer=None, layers="-1"):
 
             sample_index = _batch_item(batch.get("sample_index"), sequence_index)
             example_id = _batch_item(batch.get("example_id"), sequence_index)
+            raw_index = _batch_item(batch.get("raw_index"), sequence_index)
+            dataset = _batch_item(batch.get("dataset"), sequence_index)
             domain = _batch_item(batch.get("domain"), sequence_index)
             if sample_index is not None:
                 row["sample_index"] = sample_index
             if example_id is not None:
                 row["example_id"] = example_id
+            if raw_index is not None:
+                row["raw_index"] = raw_index
+            if dataset is not None:
+                row["dataset"] = dataset
             if domain is not None:
                 row["domain"] = domain
 

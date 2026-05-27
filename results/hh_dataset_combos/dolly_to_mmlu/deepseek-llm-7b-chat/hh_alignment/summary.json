@@ -1,0 +1,162 @@
+{
+  "raw": {
+    "0": {
+      "count": 178,
+      "dot_mean": 1.2052586078643799,
+      "dot_min": -3.056123733520508,
+      "dot_max": 34.62358856201172,
+      "dot_negative_count": 37,
+      "dot_negative_fraction": 0.2078651636838913,
+      "cosine_mean": 0.03367666155099869,
+      "cosine_min": -0.07641813904047012,
+      "cosine_max": 1.0,
+      "cosine_negative_count": 37,
+      "cosine_negative_fraction": 0.2078651636838913
+    },
+    "4": {
+      "count": 178,
+      "dot_mean": 44.58612823486328,
+      "dot_min": 6.838824272155762,
+      "dot_max": 97.52406311035156,
+      "dot_negative_count": 0,
+      "dot_negative_fraction": 0.0,
+      "cosine_mean": 0.2372409701347351,
+      "cosine_min": 0.036405645310878754,
+      "cosine_max": 0.5931612849235535,
+      "cosine_negative_count": 0,
+      "cosine_negative_fraction": 0.0
+    },
+    "8": {
+      "count": 178,
+      "dot_mean": 71.37748718261719,
+      "dot_min": 27.81648826599121,
+      "dot_max": 279.5602111816406,
+      "dot_negative_count": 0,
+      "dot_negative_fraction": 0.0,
+      "cosine_mean": 0.1111837700009346,
+      "cosine_min": 0.03976918011903763,
+      "cosine_max": 0.4805835485458374,
+      "cosine_negative_count": 0,
+      "cosine_negative_fraction": 0.0
+    },
+    "12": {
+      "count": 178,
+      "dot_mean": 147.9036102294922,
+      "dot_min": 31.369749069213867,
+      "dot_max": 707.9244384765625,
+      "dot_negative_count": 0,
+      "dot_negative_fraction": 0.0,
+      "cosine_mean": 0.08399224281311035,
+      "cosine_min": 0.016060080379247665,
+      "cosine_max": 0.4260163903236389,
+      "cosine_negative_count": 0,
+      "cosine_negative_fraction": 0.0
+    },
+    "20": {
+      "count": 178,
+      "dot_mean": 777.2786254882812,
+      "dot_min": 20.0743408203125,
+      "dot_max": 3177.54833984375,
+      "dot_negative_count": 0,
+      "dot_negative_fraction": 0.0,
+      "cosine_mean": 0.07611343264579773,
+      "cosine_min": 0.001797053380869329,
+      "cosine_max": 0.3165353238582611,
+      "cosine_negative_count": 0,
+      "cosine_negative_fraction": 0.0
+    },
+    "30": {
+      "count": 178,
+      "dot_mean": 250.00083923339844,
+      "dot_min": -28.861801147460938,
+      "dot_max": 367.3185729980469,
+      "dot_negative_count": 2,
+      "dot_negative_fraction": 0.01123595517128706,
+      "cosine_mean": 0.566674530506134,
+      "cosine_min": -0.06760603934526443,
+      "cosine_max": 0.7823247313499451,
+      "cosine_negative_count": 2,
+      "cosine_negative_fraction": 0.01123595517128706
+    }
+  },
+  "centered": {
+    "0": {
+      "count": 178,
+      "dot_mean": -0.19667185842990875,
+      "dot_min": -4.7888102531433105,
+      "dot_max": 35.00760269165039,
+      "dot_negative_count": 119,
+      "dot_negative_fraction": 0.6685393452644348,
+      "cosine_mean": 0.0021863447036594152,
+      "cosine_min": -0.12438028305768967,
+      "cosine_max": 0.9999998807907104,
+      "cosine_negative_count": 119,
+      "cosine_negative_fraction": 0.6685393452644348
+    },
+    "4": {
+      "count": 178,
+      "dot_mean": -0.6084297299385071,
+      "dot_min": -22.64095687866211,
+      "dot_max": 72.17549133300781,
+      "dot_negative_count": 112,
+      "dot_negative_fraction": 0.6292135119438171,
+      "cosine_mean": 0.009583617560565472,
+      "cosine_min": -0.1289200782775879,
+      "cosine_max": 0.514047384262085,
+      "cosine_negative_count": 112,
+      "cosine_negative_fraction": 0.6292135119438171
+    },
+    "8": {
+      "count": 178,
+      "dot_mean": -3.044231653213501,
+      "dot_min": -78.26496887207031,
+      "dot_max": 272.8009338378906,
+      "dot_negative_count": 107,
+      "dot_negative_fraction": 0.601123571395874,
+      "cosine_mean": -0.0015248135896399617,
+      "cosine_min": -0.10405565053224564,
+      "cosine_max": 0.4737085700035095,
+      "cosine_negative_count": 107,
+      "cosine_negative_fraction": 0.601123571395874
+    },
+    "12": {
+      "count": 178,
+      "dot_mean": -10.09538745880127,
+      "dot_min": -210.50523376464844,
+      "dot_max": 744.442138671875,
+      "dot_negative_count": 106,
+      "dot_negative_fraction": 0.5955055952072144,
+      "cosine_mean": -0.0054849726147949696,
+      "cosine_min": -0.11081886291503906,
+      "cosine_max": 0.4386143982410431,
+      "cosine_negative_count": 106,
+      "cosine_negative_fraction": 0.5955055952072144
+    },
+    "20": {
+      "count": 178,
+      "dot_mean": -58.97355651855469,
+      "dot_min": -1092.7366943359375,
+      "dot_max": 2767.44580078125,
+      "dot_negative_count": 108,
+      "dot_negative_fraction": 0.6067415475845337,
+      "cosine_mean": -0.007382783107459545,
+      "cosine_min": -0.13878661394119263,
+      "cosine_max": 0.2883685529232025,
+      "cosine_negative_count": 108,
+      "cosine_negative_fraction": 0.6067415475845337
+    },
+    "30": {
+      "count": 178,
+      "dot_mean": -1.2708016633987427,
+      "dot_min": -47.24528121948242,
+      "dot_max": 94.38402557373047,
+      "dot_negative_count": 112,
+      "dot_negative_fraction": 0.6292135119438171,
+      "cosine_mean": -0.013834587298333645,
+      "cosine_min": -0.29065263271331787,
+      "cosine_max": 0.4784533977508545,
+      "cosine_negative_count": 112,
+      "cosine_negative_fraction": 0.6292135119438171
+    }
+  }
+}

@@ -104,6 +104,35 @@ def filter_pairs_by_metadata(metadata, pair_indices, same_sample=None):
     return torch.tensor(kept, dtype=torch.long).reshape(-1, 2)
 
 
+def filter_pairs_by_dataset(metadata, pair_indices, different_dataset=None):
+    """
+    Filter pairs using metadata["dataset"].
+
+    Args:
+        different_dataset:
+            - None: keep all pairs.
+            - True: keep only pairs from different datasets.
+            - False: keep only pairs from the same dataset.
+    """
+    pairs = torch.as_tensor(pair_indices, dtype=torch.long)
+    if pairs.dim() != 2 or pairs.shape[1] != 2:
+        raise ValueError("pair_indices must have shape [num_pairs, 2].")
+    if different_dataset is None:
+        return pairs
+
+    kept = []
+    for left, right in pairs.tolist():
+        left_dataset = metadata[left].get("dataset")
+        right_dataset = metadata[right].get("dataset")
+        if left_dataset is None or right_dataset is None:
+            continue
+        is_different = left_dataset != right_dataset
+        if is_different == different_dataset:
+            kept.append((left, right))
+
+    return torch.tensor(kept, dtype=torch.long).reshape(-1, 2)
+
+
 def sample_pair_indices_from_metadata(
     metadata,
     max_pairs,
@@ -111,6 +140,7 @@ def sample_pair_indices_from_metadata(
     include_self=False,
     directed=False,
     same_sample=None,
+    different_dataset=None,
 ):
     """
     Deterministically sample pairs from token-record metadata.
@@ -126,6 +156,11 @@ def sample_pair_indices_from_metadata(
         metadata=metadata,
         pair_indices=candidates,
         same_sample=same_sample,
+    )
+    candidates = filter_pairs_by_dataset(
+        metadata=metadata,
+        pair_indices=candidates,
+        different_dataset=different_dataset,
     )
 
     if max_pairs is None or max_pairs >= len(candidates):
@@ -188,6 +223,19 @@ def _dry_test():
     assert same.tolist() == [[0, 1], [2, 3]]
     assert cross.tolist() == [[0, 2], [0, 3], [1, 2], [1, 3]]
 
+    dataset_metadata = [
+        {"sample_index": 0, "dataset": "gsm8k"},
+        {"sample_index": 0, "dataset": "gsm8k"},
+        {"sample_index": 1, "dataset": "mmlu"},
+        {"sample_index": 1, "dataset": "mmlu"},
+    ]
+    cross_dataset = sample_pair_indices_from_metadata(
+        dataset_metadata,
+        max_pairs=None,
+        different_dataset=True,
+    )
+    assert cross_dataset.tolist() == [[0, 2], [0, 3], [1, 2], [1, 3]]
+
     rows = pair_indices_to_rows(same, metadata=metadata)
     assert rows[0]["left_metadata"]["sample_index"] == 0
     assert rows[1]["right_metadata"]["label_pos"] == 2
@@ -197,6 +245,7 @@ def _dry_test():
     print(f"sampled pairs: {sample_a.tolist()}")
     print(f"same-sample pairs: {same.tolist()}")
     print(f"cross-sample pairs: {cross.tolist()}")
+    print(f"cross-dataset pairs: {cross_dataset.tolist()}")
 
 
 if __name__ == "__main__":

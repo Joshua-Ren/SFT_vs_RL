@@ -1,0 +1,528 @@
+Waiting for lock /tmp/run_locked_josren at Wed 20 May 16:09:51 BST 2026
+(will force acquire the lock in 3 minutes)
+Lock acquired at Wed 20 May 16:09:51 BST 2026
+Channels:
+ - conda-forge
+ - nvidia
+ - defaults
+ - pytorch
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+Downloading and Extracting Packages: ...working... done
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+Installing pip dependencies: ...working... Ran pip subprocess with arguments:
+['/scratch-ssd/josren/conda_envs/llm/bin/python', '-m', 'pip', 'install', '-U', '-r', '/auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt', '--exists-action=b']
+Pip subprocess output:
+Looking in indexes: https://download.pytorch.org/whl/cu118, https://pypi.org/simple
+Requirement already satisfied: torch==2.6.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from -r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 2)) (2.6.0+cu118)
+Requirement already satisfied: torchvision==0.21.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from -r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 3)) (0.21.0+cu118)
+Requirement already satisfied: torchaudio==2.6.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from -r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 4)) (2.6.0+cu118)
+Requirement already satisfied: transformers in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from -r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 6)) (5.8.1)
+Collecting transformers (from -r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 6))
+  Downloading transformers-5.9.0-py3-none-any.whl.metadata (33 kB)
+Requirement already satisfied: datasets in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from -r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 7)) (4.8.5)
+Requirement already satisfied: accelerate in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from -r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 8)) (1.13.0)
+Requirement already satisfied: peft in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from -r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 9)) (0.19.1)
+Requirement already satisfied: trl in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from -r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: sentencepiece in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from -r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 11)) (0.2.1)
+Requirement already satisfied: huggingface_hub in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from -r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 12)) (1.15.0)
+Requirement already satisfied: safetensors in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from -r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 13)) (0.7.0)
+Requirement already satisfied: wandb in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from -r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 14)) (0.27.0)
+Requirement already satisfied: einops in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from -r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 15)) (0.8.2)
+Requirement already satisfied: jsonlines in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from -r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 16)) (4.0.0)
+Requirement already satisfied: pyyaml in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from -r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 17)) (6.0.3)
+Requirement already satisfied: filelock in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from torch==2.6.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 2)) (3.25.2)
+Requirement already satisfied: typing-extensions>=4.10.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from torch==2.6.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 2)) (4.15.0)
+Requirement already satisfied: networkx in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from torch==2.6.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 2)) (3.4.2)
+Requirement already satisfied: jinja2 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from torch==2.6.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 2)) (3.1.6)
+Requirement already satisfied: fsspec in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from torch==2.6.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 2)) (2026.2.0)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu11==11.8.89 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from torch==2.6.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 2)) (11.8.89)
+Requirement already satisfied: nvidia-cuda-runtime-cu11==11.8.89 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from torch==2.6.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 2)) (11.8.89)
+Requirement already satisfied: nvidia-cuda-cupti-cu11==11.8.87 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from torch==2.6.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 2)) (11.8.87)
+Requirement already satisfied: nvidia-cudnn-cu11==9.1.0.70 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from torch==2.6.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 2)) (9.1.0.70)
+Requirement already satisfied: nvidia-cublas-cu11==11.11.3.6 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from torch==2.6.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 2)) (11.11.3.6)
+Requirement already satisfied: nvidia-cufft-cu11==10.9.0.58 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from torch==2.6.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 2)) (10.9.0.58)
+Requirement already satisfied: nvidia-curand-cu11==10.3.0.86 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from torch==2.6.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 2)) (10.3.0.86)
+Requirement already satisfied: nvidia-cusolver-cu11==11.4.1.48 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from torch==2.6.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 2)) (11.4.1.48)
+Requirement already satisfied: nvidia-cusparse-cu11==11.7.5.86 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from torch==2.6.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 2)) (11.7.5.86)
+Requirement already satisfied: nvidia-nccl-cu11==2.21.5 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from torch==2.6.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 2)) (2.21.5)
+Requirement already satisfied: nvidia-nvtx-cu11==11.8.86 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from torch==2.6.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 2)) (11.8.86)
+Requirement already satisfied: triton==3.2.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from torch==2.6.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 2)) (3.2.0)
+Requirement already satisfied: sympy==1.13.1 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from torch==2.6.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 2)) (1.13.1)
+Requirement already satisfied: numpy in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from torchvision==0.21.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 3)) (2.2.6)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from torchvision==0.21.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 3)) (12.1.1)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from sympy==1.13.1->torch==2.6.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 2)) (1.3.0)
+Requirement already satisfied: packaging>=20.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from transformers->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 6)) (26.0)
+Requirement already satisfied: regex>=2025.10.22 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from transformers->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 6)) (2026.2.28)
+Requirement already satisfied: tokenizers<=0.23.0,>=0.22.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from transformers->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 6)) (0.22.2)
+Requirement already satisfied: typer in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from transformers->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 6)) (0.24.1)
+Requirement already satisfied: tqdm>=4.27 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from transformers->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 6)) (4.67.3)
+Requirement already satisfied: hf-xet<2.0.0,>=1.4.3 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from huggingface_hub->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 12)) (1.4.3)
+Requirement already satisfied: httpx<1,>=0.23.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from huggingface_hub->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 12)) (0.28.1)
+Requirement already satisfied: anyio in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from httpx<1,>=0.23.0->huggingface_hub->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 12)) (4.12.1)
+Requirement already satisfied: certifi in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from httpx<1,>=0.23.0->huggingface_hub->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 12)) (2026.5.20)
+Requirement already satisfied: httpcore==1.* in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from httpx<1,>=0.23.0->huggingface_hub->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 12)) (1.0.9)
+Requirement already satisfied: idna in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from httpx<1,>=0.23.0->huggingface_hub->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 12)) (3.11)
+Requirement already satisfied: h11>=0.16 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from httpcore==1.*->httpx<1,>=0.23.0->huggingface_hub->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 12)) (0.16.0)
+Requirement already satisfied: pyarrow>=21.0.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from datasets->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 7)) (23.0.1)
+Requirement already satisfied: dill<0.4.2,>=0.3.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from datasets->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 7)) (0.4.1)
+Requirement already satisfied: pandas in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from datasets->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 7)) (2.3.3)
+Requirement already satisfied: requests>=2.32.2 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from datasets->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 7)) (2.32.5)
+Requirement already satisfied: xxhash in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from datasets->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 7)) (3.6.0)
+Requirement already satisfied: multiprocess<0.70.20 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from datasets->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 7)) (0.70.19)
+Requirement already satisfied: aiohttp!=4.0.0a0,!=4.0.0a1 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from fsspec[http]<=2026.2.0,>=2023.1.0->datasets->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 7)) (3.13.3)
+Requirement already satisfied: psutil in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from accelerate->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 8)) (7.2.2)
+Requirement already satisfied: click>=8.2.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from wandb->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 14)) (8.3.1)
+Requirement already satisfied: gitpython!=3.1.29,>=1.0.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from wandb->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 14)) (3.1.46)
+Requirement already satisfied: platformdirs in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from wandb->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 14)) (4.9.4)
+Requirement already satisfied: protobuf!=5.28.0,!=5.29.0,<8,>4.21.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from wandb->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 14)) (6.33.6)
+Requirement already satisfied: pydantic<3,>=2.6 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from wandb->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 14)) (2.12.5)
+Requirement already satisfied: sentry-sdk>=2.0.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from wandb->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 14)) (2.55.0)
+Requirement already satisfied: annotated-types>=0.6.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from pydantic<3,>=2.6->wandb->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 14)) (0.7.0)
+Requirement already satisfied: pydantic-core==2.41.5 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from pydantic<3,>=2.6->wandb->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 14)) (2.41.5)
+Requirement already satisfied: typing-inspection>=0.4.2 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from pydantic<3,>=2.6->wandb->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 14)) (0.4.2)
+Requirement already satisfied: charset_normalizer<4,>=2 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from requests>=2.32.2->datasets->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 7)) (3.4.6)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from requests>=2.32.2->datasets->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 7)) (2.6.3)
+Requirement already satisfied: attrs>=19.2.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from jsonlines->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 16)) (25.4.0)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 7)) (2.6.1)
+Requirement already satisfied: aiosignal>=1.4.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 7)) (1.4.0)
+Requirement already satisfied: async-timeout<6.0,>=4.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 7)) (5.0.1)
+Requirement already satisfied: frozenlist>=1.1.1 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 7)) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 7)) (6.7.1)
+Requirement already satisfied: propcache>=0.2.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 7)) (0.4.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 7)) (1.23.0)
+Requirement already satisfied: gitdb<5,>=4.0.1 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from gitpython!=3.1.29,>=1.0.0->wandb->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 14)) (4.0.12)
+Requirement already satisfied: smmap<6,>=3.0.1 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from gitdb<5,>=4.0.1->gitpython!=3.1.29,>=1.0.0->wandb->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 14)) (5.0.3)
+Requirement already satisfied: shellingham>=1.3.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from typer->transformers->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 6)) (1.5.4)
+Requirement already satisfied: rich>=12.3.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from typer->transformers->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 6)) (14.3.3)
+Requirement already satisfied: annotated-doc>=0.0.2 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from typer->transformers->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 6)) (0.0.4)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from rich>=12.3.0->typer->transformers->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 6)) (4.0.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from rich>=12.3.0->typer->transformers->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 6)) (2.19.2)
+Requirement already satisfied: mdurl~=0.1 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from markdown-it-py>=2.2.0->rich>=12.3.0->typer->transformers->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 6)) (0.1.2)
+Requirement already satisfied: exceptiongroup>=1.0.2 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from anyio->httpx<1,>=0.23.0->huggingface_hub->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 12)) (1.3.1)
+Requirement already satisfied: MarkupSafe>=2.0 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from jinja2->torch==2.6.0->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 2)) (3.0.3)
+Requirement already satisfied: python-dateutil>=2.8.2 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from pandas->datasets->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 7)) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from pandas->datasets->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 7)) (2026.1.post1)
+Requirement already satisfied: tzdata>=2022.7 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from pandas->datasets->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 7)) (2025.3)
+Requirement already satisfied: six>=1.5 in /scratch-ssd/josren/conda_envs/llm/lib/python3.10/site-packages (from python-dateutil>=2.8.2->pandas->datasets->-r /auto/users/josren/SFT_vs_RL/condaenv.6tk6bwa0.requirements.txt (line 7)) (1.17.0)
+Downloading transformers-5.9.0-py3-none-any.whl (10.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.8/10.8 MB 78.1 MB/s  0:00:00
+Installing collected packages: transformers
+  Attempting uninstall: transformers
+    Found existing installation: transformers 5.8.1
+    Uninstalling transformers-5.8.1:
+      Successfully uninstalled transformers-5.8.1
+Successfully installed transformers-5.9.0
+
+done
+#
+# To activate this environment, use
+#
+#     $ conda activate llm
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+Lock released at Wed 20 May 16:10:43 BST 2026
+==========================
+Running HH alignment: Qwen/Qwen3.5-0.8B
+Experiment: hh_dataset_combos
+Combo: gsm8k:mmlu:gsm8k_mmlu:cross_dataset
+==========================
+Debug token alignment rows:
+{'example_id': 'gsm8k:6917', 'hidden_pos': 90, 'target_pos': 91, 'input_token_at_hidden_pos': '\n', 'target_token': 'It', 'label_value': 2064, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 91, 'target_pos': 92, 'input_token_at_hidden_pos': 'It', 'target_token': ' r', 'label_value': 427, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 92, 'target_pos': 93, 'input_token_at_hidden_pos': ' r', 'target_token': 'ained', 'label_value': 2540, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 93, 'target_pos': 94, 'input_token_at_hidden_pos': 'ained', 'target_token': ' for', 'label_value': 364, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 94, 'target_pos': 95, 'input_token_at_hidden_pos': ' for', 'target_token': ' a', 'label_value': 264, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 95, 'target_pos': 96, 'input_token_at_hidden_pos': ' a', 'target_token': ' total', 'label_value': 2702, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 96, 'target_pos': 97, 'input_token_at_hidden_pos': ' total', 'target_token': ' of', 'label_value': 314, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 97, 'target_pos': 98, 'input_token_at_hidden_pos': ' of', 'target_token': ' ', 'label_value': 220, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 98, 'target_pos': 99, 'input_token_at_hidden_pos': ' ', 'target_token': '3', 'label_value': 18, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 99, 'target_pos': 100, 'input_token_at_hidden_pos': '3', 'target_token': '.', 'label_value': 13, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 100, 'target_pos': 101, 'input_token_at_hidden_pos': '.', 'target_token': '7', 'label_value': 22, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 101, 'target_pos': 102, 'input_token_at_hidden_pos': '7', 'target_token': '9', 'label_value': 24, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 102, 'target_pos': 103, 'input_token_at_hidden_pos': '9', 'target_token': '+', 'label_value': 10, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 103, 'target_pos': 104, 'input_token_at_hidden_pos': '+', 'target_token': '4', 'label_value': 19, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 104, 'target_pos': 105, 'input_token_at_hidden_pos': '4', 'target_token': '.', 'label_value': 13, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 105, 'target_pos': 106, 'input_token_at_hidden_pos': '.', 'target_token': '5', 'label_value': 20, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 106, 'target_pos': 107, 'input_token_at_hidden_pos': '5', 'target_token': '+', 'label_value': 10, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 107, 'target_pos': 108, 'input_token_at_hidden_pos': '+', 'target_token': '3', 'label_value': 18, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 108, 'target_pos': 109, 'input_token_at_hidden_pos': '3', 'target_token': '.', 'label_value': 13, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 109, 'target_pos': 110, 'input_token_at_hidden_pos': '.', 'target_token': '9', 'label_value': 24, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+Saved HH analysis outputs to /scratch-ssd/josren/SFT_vs_RL/results/hh_dataset_combos/gsm8k_to_mmlu/Qwen3.5-0.8B/hh_alignment
+num_records: 109
+num_pairs: 108
+selected_layers: [0, 4, 8, 12, 20, 24]
+HH output validation passed
+rows: 1296
+clipped_cosine_values: 0
+metric_variants: ['centered', 'raw']
+Creating remote dir...
+Syncing HH outputs to /scratch-ssd/josren/SFT_vs_RL/results/hh_dataset_combos/gsm8k_to_mmlu/Qwen3.5-0.8B and metadata to /users/josren/SFT_vs_RL/results/hh_dataset_combos/gsm8k_to_mmlu/Qwen3.5-0.8B
+sending incremental file list
+./
+hh_alignment/
+hh_alignment/debug_hidden_layer_24.pt
+hh_alignment/debug_pair_indices.pt
+
+sent 227,753 bytes  received 65 bytes  151,878.67 bytes/sec
+total size is 227,445  speedup is 1.00
+sending incremental file list
+./
+hh_alignment/
+hh_alignment/debug_pair_samples.jsonl
+hh_alignment/debug_token_alignment.jsonl
+hh_alignment/metadata.jsonl
+hh_alignment/pair_metrics.csv
+hh_alignment/run_config.json
+hh_alignment/summary.json
+
+sent 355,696 bytes  received 141 bytes  711,674.00 bytes/sec
+total size is 355,067  speedup is 1.00
+==========================
+Running HH alignment: Qwen/Qwen2.5-7B-Instruct
+Experiment: hh_dataset_combos
+Combo: gsm8k:mmlu:gsm8k_mmlu:cross_dataset
+==========================
+Debug token alignment rows:
+{'example_id': 'gsm8k:6917', 'hidden_pos': 87, 'target_pos': 88, 'input_token_at_hidden_pos': ':\n', 'target_token': 'It', 'label_value': 2132, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 88, 'target_pos': 89, 'input_token_at_hidden_pos': 'It', 'target_token': ' r', 'label_value': 435, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 89, 'target_pos': 90, 'input_token_at_hidden_pos': ' r', 'target_token': 'ained', 'label_value': 2627, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 90, 'target_pos': 91, 'input_token_at_hidden_pos': 'ained', 'target_token': ' for', 'label_value': 369, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 91, 'target_pos': 92, 'input_token_at_hidden_pos': ' for', 'target_token': ' a', 'label_value': 264, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 92, 'target_pos': 93, 'input_token_at_hidden_pos': ' a', 'target_token': ' total', 'label_value': 2790, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 93, 'target_pos': 94, 'input_token_at_hidden_pos': ' total', 'target_token': ' of', 'label_value': 315, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 94, 'target_pos': 95, 'input_token_at_hidden_pos': ' of', 'target_token': ' ', 'label_value': 220, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 95, 'target_pos': 96, 'input_token_at_hidden_pos': ' ', 'target_token': '3', 'label_value': 18, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 96, 'target_pos': 97, 'input_token_at_hidden_pos': '3', 'target_token': '.', 'label_value': 13, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 97, 'target_pos': 98, 'input_token_at_hidden_pos': '.', 'target_token': '7', 'label_value': 22, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 98, 'target_pos': 99, 'input_token_at_hidden_pos': '7', 'target_token': '9', 'label_value': 24, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 99, 'target_pos': 100, 'input_token_at_hidden_pos': '9', 'target_token': '+', 'label_value': 10, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 100, 'target_pos': 101, 'input_token_at_hidden_pos': '+', 'target_token': '4', 'label_value': 19, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 101, 'target_pos': 102, 'input_token_at_hidden_pos': '4', 'target_token': '.', 'label_value': 13, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 102, 'target_pos': 103, 'input_token_at_hidden_pos': '.', 'target_token': '5', 'label_value': 20, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 103, 'target_pos': 104, 'input_token_at_hidden_pos': '5', 'target_token': '+', 'label_value': 10, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 104, 'target_pos': 105, 'input_token_at_hidden_pos': '+', 'target_token': '3', 'label_value': 18, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 105, 'target_pos': 106, 'input_token_at_hidden_pos': '3', 'target_token': '.', 'label_value': 13, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 106, 'target_pos': 107, 'input_token_at_hidden_pos': '.', 'target_token': '9', 'label_value': 24, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+Saved HH analysis outputs to /scratch-ssd/josren/SFT_vs_RL/results/hh_dataset_combos/gsm8k_to_mmlu/Qwen2.5-7B-Instruct/hh_alignment
+num_records: 109
+num_pairs: 108
+selected_layers: [0, 4, 8, 12, 20, 28]
+HH output validation passed
+rows: 1296
+clipped_cosine_values: 0
+metric_variants: ['centered', 'raw']
+Creating remote dir...
+Syncing HH outputs to /scratch-ssd/josren/SFT_vs_RL/results/hh_dataset_combos/gsm8k_to_mmlu/Qwen2.5-7B-Instruct and metadata to /users/josren/SFT_vs_RL/results/hh_dataset_combos/gsm8k_to_mmlu/Qwen2.5-7B-Instruct
+sending incremental file list
+./
+hh_alignment/
+hh_alignment/debug_hidden_layer_28.pt
+hh_alignment/debug_pair_indices.pt
+
+sent 3,832 bytes  received 5,435 bytes  6,178.00 bytes/sec
+total size is 785,525  speedup is 84.77
+sending incremental file list
+./
+hh_alignment/
+hh_alignment/debug_pair_samples.jsonl
+hh_alignment/debug_token_alignment.jsonl
+hh_alignment/metadata.jsonl
+hh_alignment/pair_metrics.csv
+hh_alignment/run_config.json
+hh_alignment/summary.json
+
+sent 354,144 bytes  received 141 bytes  708,570.00 bytes/sec
+total size is 353,523  speedup is 1.00
+==========================
+Running HH alignment: Qwen/Qwen2.5-Math-7B-Instruct
+Experiment: hh_dataset_combos
+Combo: gsm8k:mmlu:gsm8k_mmlu:cross_dataset
+==========================
+Debug token alignment rows:
+{'example_id': 'gsm8k:6917', 'hidden_pos': 87, 'target_pos': 88, 'input_token_at_hidden_pos': ':\n', 'target_token': 'It', 'label_value': 2132, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 88, 'target_pos': 89, 'input_token_at_hidden_pos': 'It', 'target_token': ' r', 'label_value': 435, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 89, 'target_pos': 90, 'input_token_at_hidden_pos': ' r', 'target_token': 'ained', 'label_value': 2627, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 90, 'target_pos': 91, 'input_token_at_hidden_pos': 'ained', 'target_token': ' for', 'label_value': 369, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 91, 'target_pos': 92, 'input_token_at_hidden_pos': ' for', 'target_token': ' a', 'label_value': 264, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 92, 'target_pos': 93, 'input_token_at_hidden_pos': ' a', 'target_token': ' total', 'label_value': 2790, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 93, 'target_pos': 94, 'input_token_at_hidden_pos': ' total', 'target_token': ' of', 'label_value': 315, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 94, 'target_pos': 95, 'input_token_at_hidden_pos': ' of', 'target_token': ' ', 'label_value': 220, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 95, 'target_pos': 96, 'input_token_at_hidden_pos': ' ', 'target_token': '3', 'label_value': 18, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 96, 'target_pos': 97, 'input_token_at_hidden_pos': '3', 'target_token': '.', 'label_value': 13, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 97, 'target_pos': 98, 'input_token_at_hidden_pos': '.', 'target_token': '7', 'label_value': 22, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 98, 'target_pos': 99, 'input_token_at_hidden_pos': '7', 'target_token': '9', 'label_value': 24, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 99, 'target_pos': 100, 'input_token_at_hidden_pos': '9', 'target_token': '+', 'label_value': 10, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 100, 'target_pos': 101, 'input_token_at_hidden_pos': '+', 'target_token': '4', 'label_value': 19, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 101, 'target_pos': 102, 'input_token_at_hidden_pos': '4', 'target_token': '.', 'label_value': 13, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 102, 'target_pos': 103, 'input_token_at_hidden_pos': '.', 'target_token': '5', 'label_value': 20, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 103, 'target_pos': 104, 'input_token_at_hidden_pos': '5', 'target_token': '+', 'label_value': 10, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 104, 'target_pos': 105, 'input_token_at_hidden_pos': '+', 'target_token': '3', 'label_value': 18, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 105, 'target_pos': 106, 'input_token_at_hidden_pos': '3', 'target_token': '.', 'label_value': 13, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 106, 'target_pos': 107, 'input_token_at_hidden_pos': '.', 'target_token': '9', 'label_value': 24, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+Saved HH analysis outputs to /scratch-ssd/josren/SFT_vs_RL/results/hh_dataset_combos/gsm8k_to_mmlu/Qwen2.5-Math-7B-Instruct/hh_alignment
+num_records: 109
+num_pairs: 108
+selected_layers: [0, 4, 8, 12, 20, 28]
+HH output validation passed
+rows: 1296
+clipped_cosine_values: 0
+metric_variants: ['centered', 'raw']
+Creating remote dir...
+Syncing HH outputs to /scratch-ssd/josren/SFT_vs_RL/results/hh_dataset_combos/gsm8k_to_mmlu/Qwen2.5-Math-7B-Instruct and metadata to /users/josren/SFT_vs_RL/results/hh_dataset_combos/gsm8k_to_mmlu/Qwen2.5-Math-7B-Instruct
+sending incremental file list
+./
+hh_alignment/
+hh_alignment/debug_hidden_layer_28.pt
+hh_alignment/debug_pair_indices.pt
+
+sent 785,969 bytes  received 65 bytes  524,022.67 bytes/sec
+total size is 785,525  speedup is 1.00
+sending incremental file list
+./
+hh_alignment/
+hh_alignment/debug_pair_samples.jsonl
+hh_alignment/debug_token_alignment.jsonl
+hh_alignment/metadata.jsonl
+hh_alignment/pair_metrics.csv
+hh_alignment/run_config.json
+hh_alignment/summary.json
+
+sent 354,150 bytes  received 141 bytes  708,582.00 bytes/sec
+total size is 353,521  speedup is 1.00
+==========================
+Running HH alignment: meta-llama/Llama-3.2-3B
+Experiment: hh_dataset_combos
+Combo: gsm8k:mmlu:gsm8k_mmlu:cross_dataset
+==========================
+Debug token alignment rows:
+{'example_id': 'gsm8k:6917', 'hidden_pos': 83, 'target_pos': 84, 'input_token_at_hidden_pos': ':\n', 'target_token': 'It', 'label_value': 2181, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 84, 'target_pos': 85, 'input_token_at_hidden_pos': 'It', 'target_token': ' r', 'label_value': 436, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 85, 'target_pos': 86, 'input_token_at_hidden_pos': ' r', 'target_token': 'ained', 'label_value': 2692, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 86, 'target_pos': 87, 'input_token_at_hidden_pos': 'ained', 'target_token': ' for', 'label_value': 369, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 87, 'target_pos': 88, 'input_token_at_hidden_pos': ' for', 'target_token': ' a', 'label_value': 264, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 88, 'target_pos': 89, 'input_token_at_hidden_pos': ' a', 'target_token': ' total', 'label_value': 2860, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 89, 'target_pos': 90, 'input_token_at_hidden_pos': ' total', 'target_token': ' of', 'label_value': 315, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 90, 'target_pos': 91, 'input_token_at_hidden_pos': ' of', 'target_token': ' ', 'label_value': 220, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 91, 'target_pos': 92, 'input_token_at_hidden_pos': ' ', 'target_token': '3', 'label_value': 18, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 92, 'target_pos': 93, 'input_token_at_hidden_pos': '3', 'target_token': '.', 'label_value': 13, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 93, 'target_pos': 94, 'input_token_at_hidden_pos': '.', 'target_token': '79', 'label_value': 4643, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 94, 'target_pos': 95, 'input_token_at_hidden_pos': '79', 'target_token': '+', 'label_value': 10, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 95, 'target_pos': 96, 'input_token_at_hidden_pos': '+', 'target_token': '4', 'label_value': 19, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 96, 'target_pos': 97, 'input_token_at_hidden_pos': '4', 'target_token': '.', 'label_value': 13, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 97, 'target_pos': 98, 'input_token_at_hidden_pos': '.', 'target_token': '5', 'label_value': 20, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 98, 'target_pos': 99, 'input_token_at_hidden_pos': '5', 'target_token': '+', 'label_value': 10, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 99, 'target_pos': 100, 'input_token_at_hidden_pos': '+', 'target_token': '3', 'label_value': 18, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 100, 'target_pos': 101, 'input_token_at_hidden_pos': '3', 'target_token': '.', 'label_value': 13, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 101, 'target_pos': 102, 'input_token_at_hidden_pos': '.', 'target_token': '95', 'label_value': 2721, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 102, 'target_pos': 103, 'input_token_at_hidden_pos': '95', 'target_token': '+', 'label_value': 10, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+Saved HH analysis outputs to /scratch-ssd/josren/SFT_vs_RL/results/hh_dataset_combos/gsm8k_to_mmlu/Llama-3.2-3B/hh_alignment
+num_records: 97
+num_pairs: 96
+selected_layers: [0, 4, 8, 12, 20, 28]
+HH output validation passed
+rows: 1152
+clipped_cosine_values: 0
+metric_variants: ['centered', 'raw']
+Creating remote dir...
+Syncing HH outputs to /scratch-ssd/josren/SFT_vs_RL/results/hh_dataset_combos/gsm8k_to_mmlu/Llama-3.2-3B and metadata to /users/josren/SFT_vs_RL/results/hh_dataset_combos/gsm8k_to_mmlu/Llama-3.2-3B
+sending incremental file list
+./
+hh_alignment/
+hh_alignment/debug_hidden_layer_28.pt
+hh_alignment/debug_pair_indices.pt
+
+sent 3,381 bytes  received 4,757 bytes  3,255.20 bytes/sec
+total size is 599,989  speedup is 73.73
+sending incremental file list
+./
+hh_alignment/
+hh_alignment/debug_pair_samples.jsonl
+hh_alignment/debug_token_alignment.jsonl
+hh_alignment/metadata.jsonl
+hh_alignment/pair_metrics.csv
+hh_alignment/run_config.json
+hh_alignment/summary.json
+
+sent 317,112 bytes  received 141 bytes  634,506.00 bytes/sec
+total size is 316,502  speedup is 1.00
+==========================
+Running HH alignment: meta-llama/Llama-3.2-3B-Instruct
+Experiment: hh_dataset_combos
+Combo: gsm8k:mmlu:gsm8k_mmlu:cross_dataset
+==========================
+Debug token alignment rows:
+{'example_id': 'gsm8k:6917', 'hidden_pos': 83, 'target_pos': 84, 'input_token_at_hidden_pos': ':\n', 'target_token': 'It', 'label_value': 2181, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 84, 'target_pos': 85, 'input_token_at_hidden_pos': 'It', 'target_token': ' r', 'label_value': 436, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 85, 'target_pos': 86, 'input_token_at_hidden_pos': ' r', 'target_token': 'ained', 'label_value': 2692, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 86, 'target_pos': 87, 'input_token_at_hidden_pos': 'ained', 'target_token': ' for', 'label_value': 369, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 87, 'target_pos': 88, 'input_token_at_hidden_pos': ' for', 'target_token': ' a', 'label_value': 264, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 88, 'target_pos': 89, 'input_token_at_hidden_pos': ' a', 'target_token': ' total', 'label_value': 2860, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 89, 'target_pos': 90, 'input_token_at_hidden_pos': ' total', 'target_token': ' of', 'label_value': 315, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 90, 'target_pos': 91, 'input_token_at_hidden_pos': ' of', 'target_token': ' ', 'label_value': 220, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 91, 'target_pos': 92, 'input_token_at_hidden_pos': ' ', 'target_token': '3', 'label_value': 18, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 92, 'target_pos': 93, 'input_token_at_hidden_pos': '3', 'target_token': '.', 'label_value': 13, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 93, 'target_pos': 94, 'input_token_at_hidden_pos': '.', 'target_token': '79', 'label_value': 4643, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 94, 'target_pos': 95, 'input_token_at_hidden_pos': '79', 'target_token': '+', 'label_value': 10, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 95, 'target_pos': 96, 'input_token_at_hidden_pos': '+', 'target_token': '4', 'label_value': 19, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 96, 'target_pos': 97, 'input_token_at_hidden_pos': '4', 'target_token': '.', 'label_value': 13, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 97, 'target_pos': 98, 'input_token_at_hidden_pos': '.', 'target_token': '5', 'label_value': 20, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 98, 'target_pos': 99, 'input_token_at_hidden_pos': '5', 'target_token': '+', 'label_value': 10, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 99, 'target_pos': 100, 'input_token_at_hidden_pos': '+', 'target_token': '3', 'label_value': 18, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 100, 'target_pos': 101, 'input_token_at_hidden_pos': '3', 'target_token': '.', 'label_value': 13, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 101, 'target_pos': 102, 'input_token_at_hidden_pos': '.', 'target_token': '95', 'label_value': 2721, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 102, 'target_pos': 103, 'input_token_at_hidden_pos': '95', 'target_token': '+', 'label_value': 10, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+Saved HH analysis outputs to /scratch-ssd/josren/SFT_vs_RL/results/hh_dataset_combos/gsm8k_to_mmlu/Llama-3.2-3B-Instruct/hh_alignment
+num_records: 97
+num_pairs: 96
+selected_layers: [0, 4, 8, 12, 20, 28]
+HH output validation passed
+rows: 1152
+clipped_cosine_values: 0
+metric_variants: ['centered', 'raw']
+Creating remote dir...
+Syncing HH outputs to /scratch-ssd/josren/SFT_vs_RL/results/hh_dataset_combos/gsm8k_to_mmlu/Llama-3.2-3B-Instruct and metadata to /users/josren/SFT_vs_RL/results/hh_dataset_combos/gsm8k_to_mmlu/Llama-3.2-3B-Instruct
+sending incremental file list
+./
+hh_alignment/
+hh_alignment/debug_hidden_layer_28.pt
+hh_alignment/debug_pair_indices.pt
+
+sent 3,384 bytes  received 4,757 bytes  5,427.33 bytes/sec
+total size is 599,989  speedup is 73.70
+sending incremental file list
+./
+hh_alignment/
+hh_alignment/debug_pair_samples.jsonl
+hh_alignment/debug_token_alignment.jsonl
+hh_alignment/metadata.jsonl
+hh_alignment/pair_metrics.csv
+hh_alignment/run_config.json
+hh_alignment/summary.json
+
+sent 317,730 bytes  received 141 bytes  635,742.00 bytes/sec
+total size is 317,113  speedup is 1.00
+==========================
+Running HH alignment: deepseek-ai/deepseek-llm-7b-chat
+Experiment: hh_dataset_combos
+Combo: gsm8k:mmlu:gsm8k_mmlu:cross_dataset
+==========================
+Debug token alignment rows:
+{'example_id': 'gsm8k:6917', 'hidden_pos': 83, 'target_pos': 84, 'input_token_at_hidden_pos': ':', 'target_token': 'It', 'label_value': 1385, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 84, 'target_pos': 85, 'input_token_at_hidden_pos': 'It', 'target_token': 'rained', 'label_value': 12917, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 85, 'target_pos': 86, 'input_token_at_hidden_pos': 'rained', 'target_token': 'for', 'label_value': 1467, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 86, 'target_pos': 87, 'input_token_at_hidden_pos': 'for', 'target_token': 'at', 'label_value': 253, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 87, 'target_pos': 88, 'input_token_at_hidden_pos': 'at', 'target_token': 'otal', 'label_value': 9261, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 88, 'target_pos': 89, 'input_token_at_hidden_pos': 'otal', 'target_token': 'of', 'label_value': 994, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 89, 'target_pos': 90, 'input_token_at_hidden_pos': 'of', 'target_token': '3', 'label_value': 18, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 90, 'target_pos': 91, 'input_token_at_hidden_pos': '3', 'target_token': '.', 'label_value': 13, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 91, 'target_pos': 92, 'input_token_at_hidden_pos': '.', 'target_token': '7', 'label_value': 22, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 92, 'target_pos': 93, 'input_token_at_hidden_pos': '7', 'target_token': '9', 'label_value': 24, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 93, 'target_pos': 94, 'input_token_at_hidden_pos': '9', 'target_token': '+', 'label_value': 10, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 94, 'target_pos': 95, 'input_token_at_hidden_pos': '+', 'target_token': '4', 'label_value': 19, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 95, 'target_pos': 96, 'input_token_at_hidden_pos': '4', 'target_token': '.', 'label_value': 13, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 96, 'target_pos': 97, 'input_token_at_hidden_pos': '.', 'target_token': '5', 'label_value': 20, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 97, 'target_pos': 98, 'input_token_at_hidden_pos': '5', 'target_token': '+', 'label_value': 10, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 98, 'target_pos': 99, 'input_token_at_hidden_pos': '+', 'target_token': '3', 'label_value': 18, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 99, 'target_pos': 100, 'input_token_at_hidden_pos': '3', 'target_token': '.', 'label_value': 13, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 100, 'target_pos': 101, 'input_token_at_hidden_pos': '.', 'target_token': '9', 'label_value': 24, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 101, 'target_pos': 102, 'input_token_at_hidden_pos': '9', 'target_token': '5', 'label_value': 20, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 102, 'target_pos': 103, 'input_token_at_hidden_pos': '5', 'target_token': '+', 'label_value': 10, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+Saved HH analysis outputs to /scratch-ssd/josren/SFT_vs_RL/results/hh_dataset_combos/gsm8k_to_mmlu/deepseek-llm-7b-chat/hh_alignment
+num_records: 104
+num_pairs: 103
+selected_layers: [0, 4, 8, 12, 20, 30]
+HH output validation passed
+rows: 1236
+clipped_cosine_values: 0
+metric_variants: ['centered', 'raw']
+Creating remote dir...
+Syncing HH outputs to /scratch-ssd/josren/SFT_vs_RL/results/hh_dataset_combos/gsm8k_to_mmlu/deepseek-llm-7b-chat and metadata to /users/josren/SFT_vs_RL/results/hh_dataset_combos/gsm8k_to_mmlu/deepseek-llm-7b-chat
+sending incremental file list
+./
+hh_alignment/
+hh_alignment/debug_hidden_layer_30.pt
+hh_alignment/debug_pair_indices.pt
+
+sent 3,985 bytes  received 5,663 bytes  6,432.00 bytes/sec
+total size is 856,053  speedup is 88.73
+sending incremental file list
+./
+hh_alignment/
+hh_alignment/debug_pair_samples.jsonl
+hh_alignment/debug_token_alignment.jsonl
+hh_alignment/metadata.jsonl
+hh_alignment/pair_metrics.csv
+hh_alignment/run_config.json
+hh_alignment/summary.json
+
+sent 335,550 bytes  received 141 bytes  671,382.00 bytes/sec
+total size is 334,940  speedup is 1.00
+==========================
+Running HH alignment: mistralai/Mistral-7B-v0.1
+Experiment: hh_dataset_combos
+Combo: gsm8k:mmlu:gsm8k_mmlu:cross_dataset
+==========================
+Debug token alignment rows:
+{'example_id': 'gsm8k:6917', 'hidden_pos': 93, 'target_pos': 94, 'input_token_at_hidden_pos': '\n', 'target_token': 'It', 'label_value': 1313, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 94, 'target_pos': 95, 'input_token_at_hidden_pos': 'It', 'target_token': 'r', 'label_value': 408, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 95, 'target_pos': 96, 'input_token_at_hidden_pos': 'r', 'target_token': 'ained', 'label_value': 1738, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 96, 'target_pos': 97, 'input_token_at_hidden_pos': 'ained', 'target_token': 'for', 'label_value': 354, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 97, 'target_pos': 98, 'input_token_at_hidden_pos': 'for', 'target_token': 'a', 'label_value': 264, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 98, 'target_pos': 99, 'input_token_at_hidden_pos': 'a', 'target_token': 'total', 'label_value': 3102, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 99, 'target_pos': 100, 'input_token_at_hidden_pos': 'total', 'target_token': 'of', 'label_value': 302, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 100, 'target_pos': 101, 'input_token_at_hidden_pos': 'of', 'target_token': '', 'label_value': 28705, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 101, 'target_pos': 102, 'input_token_at_hidden_pos': '', 'target_token': '3', 'label_value': 28770, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 102, 'target_pos': 103, 'input_token_at_hidden_pos': '3', 'target_token': '.', 'label_value': 28723, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 103, 'target_pos': 104, 'input_token_at_hidden_pos': '.', 'target_token': '7', 'label_value': 28787, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 104, 'target_pos': 105, 'input_token_at_hidden_pos': '7', 'target_token': '9', 'label_value': 28774, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 105, 'target_pos': 106, 'input_token_at_hidden_pos': '9', 'target_token': '+', 'label_value': 28806, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 106, 'target_pos': 107, 'input_token_at_hidden_pos': '+', 'target_token': '4', 'label_value': 28781, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 107, 'target_pos': 108, 'input_token_at_hidden_pos': '4', 'target_token': '.', 'label_value': 28723, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 108, 'target_pos': 109, 'input_token_at_hidden_pos': '.', 'target_token': '5', 'label_value': 28782, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 109, 'target_pos': 110, 'input_token_at_hidden_pos': '5', 'target_token': '+', 'label_value': 28806, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 110, 'target_pos': 111, 'input_token_at_hidden_pos': '+', 'target_token': '3', 'label_value': 28770, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 111, 'target_pos': 112, 'input_token_at_hidden_pos': '3', 'target_token': '.', 'label_value': 28723, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+{'example_id': 'gsm8k:6917', 'hidden_pos': 112, 'target_pos': 113, 'input_token_at_hidden_pos': '.', 'target_token': '9', 'label_value': 28774, 'hidden_attention_mask': 1, 'target_attention_mask': 1, 'position_policy': 'causal_lm_next_token: hidden_pos = target_pos - 1'}
+Saved HH analysis outputs to /scratch-ssd/josren/SFT_vs_RL/results/hh_dataset_combos/gsm8k_to_mmlu/Mistral-7B-v0.1/hh_alignment
+num_records: 110
+num_pairs: 109
+selected_layers: [0, 4, 8, 12, 20, 32]
+HH output validation passed
+rows: 1308
+clipped_cosine_values: 0
+metric_variants: ['centered', 'raw']
+Creating remote dir...
+Syncing HH outputs to /scratch-ssd/josren/SFT_vs_RL/results/hh_dataset_combos/gsm8k_to_mmlu/Mistral-7B-v0.1 and metadata to /users/josren/SFT_vs_RL/results/hh_dataset_combos/gsm8k_to_mmlu/Mistral-7B-v0.1
+sending incremental file list
+./
+hh_alignment/
+hh_alignment/debug_hidden_layer_32.pt
+hh_alignment/debug_pair_indices.pt
+
+sent 4,099 bytes  received 5,831 bytes  6,620.00 bytes/sec
+total size is 905,333  speedup is 91.17
+sending incremental file list
+./
+hh_alignment/
+hh_alignment/debug_pair_samples.jsonl
+hh_alignment/debug_token_alignment.jsonl
+hh_alignment/metadata.jsonl
+hh_alignment/pair_metrics.csv
+hh_alignment/run_config.json
+hh_alignment/summary.json
+
+sent 366,205 bytes  received 141 bytes  732,692.00 bytes/sec
+total size is 365,577  speedup is 1.00
+==========================
+Running HH alignment: Qwen/Qwen3.5-0.8B
+Experiment: hh_dataset_combos
+Combo: dolly:mmlu:dolly_mmlu:cross_dataset
+==========================

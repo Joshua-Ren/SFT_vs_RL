@@ -1,7 +1,10 @@
 # ====== OATML Scripts
 source /scratch-ssd/oatml/miniconda3/bin/activate llm
 
-/users/josren/SFT_vs_RL/
+# Oat16, open jupyter --> forward port --> open
+jupyter lab --no-browser --ip=127.0.0.1 --port=8888
+ssh -N -L 8888:127.0.0.1:8888 oat1
+
 /scratch-ssd/josren/SFT_vs_RL/results/
 
 srun --gres=gpu:a100:1 -c 4 --pty bash

@@ -138,12 +138,27 @@ class GSM8KHHAdapter:
 
     def process_dataset(self, dataset):
         processed = []
-        for sample_index, example in enumerate(dataset):
-            item = self.processor.process_single_example(example)
-            item["example_id"] = example.get("id", sample_index)
-            item["domain"] = "gsm8k"
-            processed.append(item)
+        for raw_row in self.iter_raw_examples(dataset):
+            processed.append(self.process_raw_example(raw_row))
         return processed
+
+    def iter_raw_examples(self, dataset):
+        for source_idx, example in enumerate(dataset):
+            yield {
+                "raw_index": source_idx,
+                "example_id": example.get("id", source_idx),
+                "dataset": "gsm8k",
+                "domain": "gsm8k",
+                "example": example,
+            }
+
+    def process_raw_example(self, raw_row):
+        item = self.processor.process_single_example(raw_row["example"])
+        item["example_id"] = raw_row["example_id"]
+        item["dataset"] = raw_row["dataset"]
+        item["domain"] = raw_row["domain"]
+        item["raw_index"] = raw_row["raw_index"]
+        return item
 
 
 class MMLUHHAdapter:
@@ -196,6 +211,11 @@ class MMLUHHAdapter:
 
     def process_dataset(self, dataset):
         processed = []
+        for raw_row in self.iter_raw_examples(dataset):
+            processed.append(self.process_raw_example(raw_row))
+        return processed
+
+    def iter_raw_examples(self, dataset):
         answer_letters = ["A", "B", "C", "D"]
         max_len = max((len(subject_dataset) for subject_dataset in dataset.values()), default=0)
         for source_idx in range(max_len):
@@ -205,23 +225,34 @@ class MMLUHHAdapter:
                     continue
                 example = subject_dataset[source_idx]
                 answer_idx = int(example["answer"])
-                prompt_text = self.format_prompt(example["question"], example["choices"])
-                target_text = " " + answer_letters[answer_idx]
-                processed.append(
-                    build_supervised_sample(
-                        tokenizer=self.tokenizer,
-                        prompt_text=prompt_text,
-                        target_text=target_text,
-                        max_length=self.max_length,
-                        metadata={
-                            "example_id": f"{subject}_{source_idx}",
-                            "domain": subject,
-                            "answer_idx": answer_idx,
-                            "answer_letter": answer_letters[answer_idx],
-                        },
-                    )
-                )
-        return processed
+                yield {
+                    "raw_index": source_idx,
+                    "example_id": f"{subject}_{source_idx}",
+                    "dataset": "mmlu",
+                    "domain": subject,
+                    "answer_idx": answer_idx,
+                    "answer_letter": answer_letters[answer_idx],
+                    "example": example,
+                }
+
+    def process_raw_example(self, raw_row):
+        example = raw_row["example"]
+        prompt_text = self.format_prompt(example["question"], example["choices"])
+        target_text = " " + raw_row["answer_letter"]
+        return build_supervised_sample(
+            tokenizer=self.tokenizer,
+            prompt_text=prompt_text,
+            target_text=target_text,
+            max_length=self.max_length,
+            metadata={
+                "example_id": raw_row["example_id"],
+                "dataset": raw_row["dataset"],
+                "domain": raw_row["domain"],
+                "raw_index": raw_row["raw_index"],
+                "answer_idx": raw_row["answer_idx"],
+                "answer_letter": raw_row["answer_letter"],
+            },
+        )
 
 
 class DollyHHAdapter:
@@ -258,27 +289,44 @@ class DollyHHAdapter:
 
     def process_dataset(self, dataset):
         processed = []
-        for sample_index, example in enumerate(dataset):
+        for raw_row in self.iter_raw_examples(dataset):
+            processed.append(self.process_raw_example(raw_row))
+        return processed
+
+    def iter_raw_examples(self, dataset):
+        for source_idx, example in enumerate(dataset):
             target_text = (example.get("response") or "").strip()
             if not target_text:
                 continue
-            prompt_text = self.format_prompt(
-                instruction=example.get("instruction"),
-                context=example.get("context"),
-            )
-            processed.append(
-                build_supervised_sample(
-                    tokenizer=self.tokenizer,
-                    prompt_text=prompt_text,
-                    target_text=target_text,
-                    max_length=self.max_length,
-                    metadata={
-                        "example_id": example.get("id", sample_index),
-                        "domain": example.get("category"),
-                    },
-                )
-            )
-        return processed
+            yield {
+                "raw_index": source_idx,
+                "example_id": example.get("id", source_idx),
+                "dataset": "dolly",
+                "domain": example.get("category"),
+                "example": example,
+            }
+
+    def process_raw_example(self, raw_row):
+        example = raw_row["example"]
+        target_text = (example.get("response") or "").strip()
+        if not target_text:
+            raise ValueError(f"Selected Dolly example has empty response: {raw_row['example_id']}")
+        prompt_text = self.format_prompt(
+            instruction=example.get("instruction"),
+            context=example.get("context"),
+        )
+        return build_supervised_sample(
+            tokenizer=self.tokenizer,
+            prompt_text=prompt_text,
+            target_text=target_text,
+            max_length=self.max_length,
+            metadata={
+                "example_id": raw_row["example_id"],
+                "dataset": raw_row["dataset"],
+                "domain": raw_row["domain"],
+                "raw_index": raw_row["raw_index"],
+            },
+        )
 
 
 def make_hh_dataset_adapter(
