@@ -1,0 +1,32 @@
+{
+  "raw": {
+    "24": {
+      "count": 100,
+      "dot_mean": 5971.93798828125,
+      "dot_min": 1549.2698974609375,
+      "dot_max": 13706.283203125,
+      "dot_negative_count": 0,
+      "dot_negative_fraction": 0.0,
+      "cosine_mean": 0.4041256010532379,
+      "cosine_min": 0.09823785722255707,
+      "cosine_max": 0.7952045202255249,
+      "cosine_negative_count": 0,
+      "cosine_negative_fraction": 0.0
+    }
+  },
+  "centered": {
+    "24": {
+      "count": 100,
+      "dot_mean": -208.86907958984375,
+      "dot_min": -3412.915283203125,
+      "dot_max": 5525.828125,
+      "dot_negative_count": 63,
+      "dot_negative_fraction": 0.6299999952316284,
+      "cosine_mean": -0.019909879192709923,
+      "cosine_min": -0.34436097741127014,
+      "cosine_max": 0.5846560001373291,
+      "cosine_negative_count": 63,
+      "cosine_negative_fraction": 0.6299999952316284
+    }
+  }
+}

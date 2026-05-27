@@ -4,7 +4,7 @@ import yaml
 import torch
 from tqdm import tqdm
 from datasets import load_dataset
-from transformers import AutoModelForCausalLM
+from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments
 
 from utils.config_read import load_config
 from utils.utils import extract_solution
@@ -17,12 +17,21 @@ def parse_args():
     parser.add_argument("--config", type=str, default="./configs/train_basic.yaml")
     parser.add_argument("--output_dir", type=str, required=True)
 
+    # common overrides
+    parser.add_argument("--lr", type=float, default=None)
+    parser.add_argument("--epochs", type=int, default=None)
+    parser.add_argument("--batch_size", type=int, default=None)
+    parser.add_argument("--save_steps", type=int, default=None)
+    parser.add_argument("--logging_steps", type=int, default=None)
+
+    # ---- RL related
     parser.add_argument("--temperature", type=float, default=1.0)
-    parser.add_argument("--max_new_tokens", type=int, default=200)
+    parser.add_argument("--top_p", type=float, default=1.0)
+    parser.add_argument("--max_new_tokens", type=int, default=512)
     parser.add_argument("--n_samples", type=int, default=50)
     parser.add_argument("--model_name",type=str, default=None)
 
-    # mode: greedy / sample / both
+    # mode: greedy / sample 
     parser.add_argument("--mode", type=str, default="greedy",
                         choices=["greedy", "sample"])
 
@@ -75,7 +84,7 @@ def main():
     max_length = config["model"]["max_length"]
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
+    
     model = AutoModelForCausalLM.from_pretrained(model_name)
     model.to(device)
     model.eval()
@@ -90,9 +99,11 @@ def main():
         model_name_or_path=model_name,
         max_length=max_length
     )
-    processed_dataset = processor.process_dataset(dataset)
-    tokenizer = processor.tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    if tokenizer.pad_token is None:
+        tokenizer.pad_token = tokenizer.eos_token
 
+    processed_dataset = processor.process_dataset(dataset)
     n_samples = min(args.n_samples, len(processed_dataset))
     run_modes = get_modes(args.mode, args.temperature)
 
@@ -119,7 +130,7 @@ def main():
                     max_new_tokens=args.max_new_tokens,
                     do_sample=do_sample,
                     temperature=temperature if do_sample else None,
-                    top_p=1.0,
+                    top_p=args.top_p,
                     output_scores=True,
                     return_dict_in_generate=True,
                     pad_token_id=tokenizer.pad_token_id,

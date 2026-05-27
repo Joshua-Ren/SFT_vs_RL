@@ -83,14 +83,13 @@ def main():
         model_name_or_path=model_name,
         max_length=max_length
     )
-    processed_dataset = processor.process_dataset(dataset)
-
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForCausalLM.from_pretrained(model_name)
 
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
+    processed_dataset = processor.process_dataset(dataset)
     # -------------------------
     # Training
     # -------------------------
@@ -130,7 +129,7 @@ def main():
 
         batch_valid_logits = []
         batch_valid_labels = []
-
+        batch_responses = []
         n_samples = min(args.extract_n_samples, len(processed_dataset))
 
         with torch.no_grad():
@@ -147,19 +146,25 @@ def main():
 
                 labels = inputs["labels"]
                 valid_mask = ((labels != -100) * inputs["attention_mask"]).bool()
-
+                # import pdb
+                # breakpoint()
                 for bb in range(logits.shape[0]):
                     batch_mask = valid_mask[bb]
                     batch_logits = logits[bb, batch_mask, :]
                     batch_valid_logits.append(batch_logits.cpu())
-
                     batch_label = labels[bb, batch_mask]
                     batch_valid_labels.append(batch_label.cpu())
-
+                    response_text = tokenizer.decode(
+                        batch_label.cpu(),
+                        skip_special_tokens=True
+                    ).strip()
+                    batch_responses.append(response_text)
         torch.save(
             {
                 "sft_logits": batch_valid_logits,
                 "sft_labels": batch_valid_labels,
+                "responses": batch_responses,
+                "model_name": model_name,
             },
             output_dir / "sft_logits.pt"
         )
